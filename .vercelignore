@@ -1,0 +1,12 @@
+node_modules
+.git
+.next
+.vinext
+.wrangler
+dist
+dist-vercel
+backups
+backend
+docs/screenshots
+*.tsbuildinfo
+.env*

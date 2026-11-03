@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Library · Django experiment</title>
+    <style>
+      body {
+        font:
+          16px/1.6 system-ui,
+          sans-serif;
+        margin: 0;
+        color: #283746;
+        background: #f5f8fa;
+      }
+      main {
+        max-width: 850px;
+        margin: 35px auto;
+        padding: 32px;
+        background: white;
+        border: 1px solid #d6e1e8;
+        border-radius: 8px;
+      }
+      h1 {
+        color: #2389ba;
+      }
+      a {
+        color: #187fae;
+      }
+      li {
+        padding: 10px 0;
+      }
+      .badge {
+        padding: 3px 9px;
+        border-radius: 12px;
+        background: #e4f5ea;
+        color: #186541;
+        font-size: 13px;
+      }
+      .unavailable {
+        background: #fff0e4;
+        color: #8d501c;
+      }
+      .note {
+        color: #596b78;
+        font-size: 14px;
+      }
+      nav {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #e5ebef;
+        padding-bottom: 16px;
+      }
+      @media (max-width: 650px) {
+        main {
+          margin: 12px;
+          padding: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav>
+        <a href="{% url 'catalog:book-list' %}">Available books</a
+        ><a href="{% url 'catalog:book-list' %}?all=1">All books</a
+        ><a href="{% url 'catalog:book-list-cbv' %}">Class-based view</a>
+      </nav>
+      {% block content %}{% endblock %}
+      <p class="note">
+        Rendered by a real Django 5.2 view and template, using the experiment's
+        SQLite database.
+      </p>
+    </main>
+  </body>
+</html>

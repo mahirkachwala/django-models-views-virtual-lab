@@ -1,0 +1,11 @@
+{% extends "catalog/base.html" %} {% block content %}
+<h1>{{ book.title }}</h1>
+<p>Author: <strong>{{ book.author.name }}</strong></p>
+<p>Category: {{ book.category }}</p>
+<p>Price: ₹{{ book.price }}</p>
+<p>Book ID: {{ book.pk }}</p>
+<p class="badge {% if not book.available %}unavailable{% endif %}">
+  {% if book.available %}Available to borrow{% else %}Currently on loan{% endif %}
+</p>
+<p><a href="{% url 'catalog:book-list' %}">← Back to catalogue</a></p>
+{% endblock %}

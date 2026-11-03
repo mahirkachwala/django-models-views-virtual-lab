@@ -1,0 +1,20 @@
+{% extends "catalog/base.html" %} {% block content %}
+<h1>Library catalogue</h1>
+<p class="note">{{ implementation }}</p>
+{% if created %}
+<p class="badge">Created {{ created.title }} successfully.</p>
+{% endif %}{% if form_errors %}
+<div class="unavailable">{{ form_errors }}</div>
+{% endif %}
+<ul>
+  {% for book in books %}
+  <li>
+    <a href="{% url 'catalog:book-detail' book.pk %}">{{ book.title }}</a> — {{ book.author.name }} · {{ book.category }} · ₹{{ book.price }}
+    <span class="badge {% if not book.available %}unavailable{% endif %}"
+      >{% if book.available %}Available{% else %}On loan{% endif %}</span>
+  </li>
+  {% empty %}
+  <li>No books match this request.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

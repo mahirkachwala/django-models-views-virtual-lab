@@ -1,0 +1,223 @@
+/* E-R Modeling reference: cyan drawing area, conventional outlined entities. */
+.guided-er-bench .guided-column:nth-child(2) > .guided-column-body > h4 {
+  background: #e0fbff;
+  border: 1px solid #12bcdc;
+  color: #222;
+  padding: 7px;
+  text-align: center;
+  font:
+    italic 600 16px/1.35 Georgia,
+    serif;
+}
+.guided-er-inputs {
+  display: grid;
+  gap: 8px;
+}
+.guided-er-second-task {
+  border-top: 1px solid var(--guide-line);
+  margin-top: 14px;
+  padding-top: 10px;
+}
+.guided-lab .guided-er-bench .guided-help {
+  margin: 8px 0;
+}
+.guided-er-bench .guided-column-body > h4 {
+  margin-bottom: 8px;
+}
+.guided-er-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 12px 0;
+  padding: 12px;
+  border: 1px solid #52c5dc;
+  background: #fcffff;
+}
+.guided-er-entity {
+  width: 100%;
+  max-width: 240px;
+  border: 1px solid #555;
+  background: #fff;
+}
+.guided-lab .guided-er-entity h4 {
+  color: #222;
+  background: #f5f5f5;
+  border-bottom: 1px solid #999;
+  padding: 4px 10px;
+  text-align: center;
+  font-size: 17px;
+  margin: 0;
+}
+.guided-er-entity ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  padding: 3px 8px;
+  margin: 0;
+  list-style: none;
+}
+.guided-er-entity li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  padding: 0;
+}
+.guided-er-entity abbr {
+  text-decoration: none;
+  color: #617583;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+.guided-er-entity.is-active {
+  border-color: #1769aa;
+}
+.guided-lab .guided-er-entity.is-active h4 {
+  background: #e0fbff;
+  color: #174f76;
+}
+.guided-er-connector {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  color: #647985;
+}
+.guided-er-connector::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto;
+  width: 0;
+  border-left: 2px dashed #c6d0d7;
+}
+.guided-er-connector.is-active::before {
+  border-left: 2px solid #1769aa;
+}
+.guided-er-cardinality {
+  position: relative;
+  left: 15px;
+  font:
+    600 11px/1.2 Arial,
+    sans-serif;
+}
+.guided-er-relationship {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 30px;
+  min-width: 116px;
+  padding: 0 20px;
+  font-size: 12px;
+  color: #333;
+  background: #777;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+.guided-er-relationship::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: #fff;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+.guided-er-relationship > span {
+  position: relative;
+}
+.guided-er-connector.is-active .guided-er-relationship {
+  background: #1769aa;
+  color: #174f76;
+}
+.guided-er-connector.is-active .guided-er-relationship::before {
+  background: #e0fbff;
+}
+.guided-lab .guided-er-legend {
+  font-size: 12px;
+  color: #5d6b76;
+  padding: 4px 0 8px;
+  border-bottom: 1px solid #e0e7ec;
+}
+.guided-er-explanation {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.guided-er-bench .guided-prediction {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 16px;
+  margin-top: 12px;
+}
+.guided-er-bench .guided-prediction label {
+  margin: 3px 0;
+}
+.guided-er-bench .guided-prediction legend {
+  font-size: 13px;
+}
+.guided-er-author-result {
+  display: block;
+  margin: 10px 0;
+}
+.guided-er-author-result > strong {
+  display: block;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  background: #f4f4f4;
+  border-color: #ccc;
+  font-size: 15px;
+}
+.guided-er-author-result li {
+  font-size: 14px;
+  padding: 6px 10px;
+}
+.guided-er-author-result small {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 11px;
+}
+.guided-er-pairs .guided-er-table-caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.guided-er-bench .guided-er-pairs {
+  max-height: 260px;
+  margin: 10px 0;
+}
+.guided-er-pairs small {
+  display: block;
+  font:
+    11px/1.8 Consolas,
+    monospace;
+  color: #5f6d78;
+}
+.guided-lab .guided-er-pairs table {
+  font-size: 13px;
+  table-layout: fixed;
+}
+.guided-lab .guided-er-pairs td,
+.guided-lab .guided-er-pairs th {
+  padding: 6px 8px;
+  overflow-wrap: anywhere;
+}
+.guided-er-pairs .is-selected {
+  background: #e8fbfd;
+}
+.guided-lab .guided-er-total {
+  color: #466e50;
+  font-size: 14px;
+  margin: 6px 0 0;
+}
+@media (max-width: 760px) {
+  .guided-er-diagram {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
