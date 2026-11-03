@@ -2,6 +2,8 @@
 
 # Django Models & Views Virtual Lab — handoff
 
+**Publication update — 3 November 2026:** The lab is live at [django-models-views-virtual-lab.vercel.app](https://django-models-views-virtual-lab.vercel.app/#simulation), from [mahirkachwala/django-models-views-virtual-lab](https://github.com/mahirkachwala/django-models-views-virtual-lab). Git pushes to `main` trigger Vercel deployment. The static build reuses the current UI; the optional Django backend remains a separate local reference. URL arguments, lazy query evaluation, CSRF middleware and form-saving explanations are corrected, with 24 state tests and seven browser activities passing. The current README and `docs/vercel-deployment.md` supersede the historical archive instructions below. Design backups remain local and are not committed.
+
 The experimental reference preview was reverted on 3 November 2026. The coral/gray three-panel design is the only current view, with no preview selector. The verified pre-preview snapshot remains at `backups/simulation-before-reference-preview-2026-11-03.zip`.
 
 Prepared 16 October 2026 for continuing this project in another Codex workspace.
@@ -10,7 +12,7 @@ Prepared 16 October 2026 for continuing this project in another Codex workspace.
 
 1. Extract the ZIP into a normal writable folder, not inside the ZIP viewer.
 2. Open that extracted project folder in Codex.
-3. Install Node.js 24 LTS, including npm. The package declares Node >=22.13, but Node 24 is recommended for the native TypeScript test runner and tooling used here.
+3. Install Node.js 24, including npm. The package and hosted build are pinned to Node 24.x.
 4. Open a terminal at the project root and run:
 
 ```powershell

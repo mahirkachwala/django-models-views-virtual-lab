@@ -1,6 +1,8 @@
 # Django Models & Views Virtual Lab
 
-A localhost Virtual Labs-style experiment for learning Django models, migrations, ORM queries, relationships, CRUD and request–response behavior through one college Library.
+A Virtual Labs-style experiment for learning Django models, migrations, ORM queries, relationships, CRUD and request–response behavior through one college Library.
+
+**Live lab:** [django-models-views-virtual-lab.vercel.app](https://django-models-views-virtual-lab.vercel.app/#simulation)
 
 Project owner: [Mahir Kachwala](https://github.com/mahirkachwala) (mahirahmed.k@somaiya.edu). Contributor: [Arnav Kadhe](https://github.com/arnavkadhe) (arnav.kadhe@somaiya.edu). Institution: Somaiya Vidyavihar University.
 

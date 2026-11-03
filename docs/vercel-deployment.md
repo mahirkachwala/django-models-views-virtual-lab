@@ -21,14 +21,15 @@ so their URLs work without a server rewrite.
 
 ## Publish
 
+Production site: [django-models-views-virtual-lab.vercel.app](https://django-models-views-virtual-lab.vercel.app/#simulation). Initial production deployment reached `READY` on 3 November 2026. Changes pushed to `main` automatically rebuild the site.
+
 The source is [mahirkachwala/django-models-views-virtual-lab](https://github.com/mahirkachwala/django-models-views-virtual-lab). The Vercel project is `django-models-views-virtual-lab` in `kachwalamahir575-8695s-projects`, connected to the repository's `main` branch. Node.js is pinned to the tested 24.x release line. Arnav Kadhe is credited as a contributor and has been invited to collaborate on GitHub.
 
 Import the GitHub repository into the owner's Vercel account, retain the root
 directory, use Node.js 24, and deploy. The committed `vercel.json` supplies the
 install command, build command and output directory. Alternatively, from an
 authenticated Vercel CLI session, run `vercel --prod` from the repository root.
-The actual project name, account and successful deployment URL must be confirmed
-by the publishing operator; this configuration does not itself create a deployment.
+For a fresh copy, link to the existing project instead of creating another one.
 
 ## Runtime scope
 
