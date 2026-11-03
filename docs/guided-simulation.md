@@ -49,6 +49,8 @@ Primary references: [Django 5.2 QuerySet laziness](https://docs.djangoproject.co
 
 ## Acceptance coverage
 
+After the Django accuracy corrections, all 24 state tests (including four semantic regressions), all seven browser workflows, lint, TypeScript, the local production build, and the Vercel static build passed. The optional Django service also passed its seven tests. The four academic/simulation stylesheets retain their original SHA-256 hashes. Developer and faculty contact details were supplied by the project owner.
+
 The browser check covers: shared shell; direct-jump prerequisites; successful/404 request paths; pause/step; wrong field type; separate migration generation/application; default prices and sample-price import; price filter, optional predictions and empty QuerySet; GET rejection; create/read/update/delete and delete cancellation; commit before browser response; wrong relationship cardinality; shared category pairs and two-category completion; wrong diagnosis/repair; verified route/template fixes; seven-lesson completion; actual observation download; saved state, paused restoration and reset; shared navigation; 390px layouts and phone record actions.
 
 Desktop and phone screenshots are in `docs/screenshots/guided-*.png`. Run `npm test`, `npm run lint`, `npx tsc --noEmit`, and `npm run build` for the normal project checks. The framework may still print its existing route-classification warning while building successfully.

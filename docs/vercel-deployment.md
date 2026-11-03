@@ -21,6 +21,8 @@ so their URLs work without a server rewrite.
 
 ## Publish
 
+The source is [mahirkachwala/django-models-views-virtual-lab](https://github.com/mahirkachwala/django-models-views-virtual-lab). The Vercel project is `django-models-views-virtual-lab` in `kachwalamahir575-8695s-projects`, connected to the repository's `main` branch. Node.js is pinned to the tested 24.x release line. Arnav Kadhe is credited as a contributor and has been invited to collaborate on GitHub.
+
 Import the GitHub repository into the owner's Vercel account, retain the root
 directory, use Node.js 24, and deploy. The committed `vercel.json` supplies the
 install command, build command and output directory. Alternatively, from an
@@ -49,3 +51,12 @@ Python service with suitable persistent database configuration.
 
 The deployment entry is deliberately separate because the existing `vite.config.ts`
 builds a Cloudflare Worker, which is not a Vercel function artifact.
+
+## Windows CLI setup
+
+If Vercel CLI 65 reports a `builders-vlt` symlink permission error on Windows,
+set `VERCEL_CLI_USE_NATIVE_BINARY=0`, `VERCEL_VC_NATIVE=0`, and
+`VERCEL_CLI_MANAGED_BUILDERS=0` for that PowerShell session. When linking this
+repository, select only the detected **frontend** service. The `backend/`
+directory is a separate local Django reference project, not an additional
+production service. Using `link --yes` can incorrectly select both services.
