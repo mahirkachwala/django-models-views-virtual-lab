@@ -135,9 +135,6 @@ function Contributors() {
           ],
         ]}
       />
-      <p className="publication-note">
-        Project owner: mahirkachwala. Contributor: arnavkadhe.
-      </p>
     </div>
   );
 }
