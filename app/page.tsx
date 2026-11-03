@@ -85,10 +85,19 @@ function Contributors() {
   useEffect(() => completeSection('Contributors'), []);
   return (
     <div className="lesson contributors-page">
-      <h2 className="underlined-heading">Subject Matter Experts</h2>
+      <h2 className="underlined-heading">Faculty Coordinator</h2>
       <DataTable
         headers={['SNo.', 'Name', 'Email', 'Institute']}
-        rows={[[1, 'Faculty Coordinator', 'To be supplied', 'To be supplied']]}
+        rows={[
+          [
+            1,
+            'Abhijeet Pasi',
+            <a key="faculty-email" href="mailto:abhijeet.p@somaiya.edu">
+              abhijeet.p@somaiya.edu
+            </a>,
+            'Somaiya Vidyavihar University',
+          ],
+        ]}
       />
       <h2 className="underlined-heading contributors-second">Developers</h2>
       <DataTable
@@ -127,8 +136,7 @@ function Contributors() {
         ]}
       />
       <p className="publication-note">
-        Project owner: mahirkachwala. Contributor: arnavkadhe. Faculty reviewer
-        details have not been supplied.
+        Project owner: mahirkachwala. Contributor: arnavkadhe.
       </p>
     </div>
   );

@@ -4,6 +4,8 @@ A localhost Virtual Labs-style experiment for learning Django models, migrations
 
 Project owner: [Mahir Kachwala](https://github.com/mahirkachwala) (mahirahmed.k@somaiya.edu). Contributor: [Arnav Kadhe](https://github.com/arnavkadhe) (arnav.kadhe@somaiya.edu). Institution: Somaiya Vidyavihar University.
 
+Faculty Coordinator: Abhijeet Pasi (abhijeet.p@somaiya.edu), Somaiya Vidyavihar University.
+
 Source repository: [mahirkachwala/django-models-views-virtual-lab](https://github.com/mahirkachwala/django-models-views-virtual-lab).
 
 For Vercel, use the isolated static build described in [the deployment guide](docs/vercel-deployment.md). It imports the same pages, simulation components and styles as the local app. The optional Django reference service remains a separate localhost project.
