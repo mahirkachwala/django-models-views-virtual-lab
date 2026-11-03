@@ -1,7 +1,7 @@
 // Optional end-to-end UI check. Requires Playwright and installed Google Chrome.
 // PLAYWRIGHT_MODULE can point to an existing Playwright index.mjs as a file URL.
 import assert from 'node:assert/strict';
-import { mkdir } from 'node:fs/promises';
+import { mkdir, readFile } from 'node:fs/promises';
 const { chromium } = await import(
   process.env.PLAYWRIGHT_MODULE || 'playwright'
 );
@@ -335,9 +335,14 @@ try {
     .waitFor();
   const download = page.waitForEvent('download');
   await click('Save my observations');
+  const observationsDownload = await download;
   assert.equal(
-    (await download).suggestedFilename(),
+    observationsDownload.suggestedFilename(),
     'django-lab-observations.txt',
+  );
+  assert.match(
+    await readFile(await observationsDownload.path(), 'utf8'),
+    /7\/7 lessons completed/,
   );
   assert.match(
     await page
@@ -384,19 +389,26 @@ try {
     exact: true,
   });
   await phoneRead.click();
-  await phone.waitForFunction(
-    () =>
-      JSON.parse(localStorage.getItem('django-visual-journey-v3')).flow?.done,
-  );
+  await phone.waitForFunction(() => {
+    const flow = JSON.parse(
+      localStorage.getItem('django-visual-journey-v3'),
+    ).flow;
+    return flow?.operation.kind === 'read' && flow.done;
+  });
   await phone.getByRole('button', { name: 'Add a book', exact: true }).click();
   await phone
     .getByLabel('Book title', { exact: true })
     .fill('Mobile learner book');
   await phone.getByRole('button', { name: 'Save book', exact: true }).click();
-  await phone.waitForFunction(
-    () =>
-      JSON.parse(localStorage.getItem('django-visual-journey-v3')).flow?.done,
-  );
+  await phone.waitForFunction(() => {
+    const flow = JSON.parse(
+      localStorage.getItem('django-visual-journey-v3'),
+    ).flow;
+    return flow?.operation.kind === 'create' && flow.done;
+  });
+  await phone
+    .getByRole('button', { name: 'Read Mobile learner book', exact: true })
+    .waitFor({ state: 'visible' });
   assert.equal(
     await phone
       .getByRole('button', { name: 'Read Mobile learner book', exact: true })
@@ -477,7 +489,11 @@ try {
     'PASS saved progress, all seven mobile layouts, shared navigation and reset',
   );
 } catch (error) {
-  await capture('docs/screenshots/guided-ui-check-failure.png');
+  try {
+    await capture('docs/screenshots/guided-ui-check-failure.png');
+  } catch (captureError) {
+    console.warn('Could not capture the failed page:', captureError.message);
+  }
   throw error;
 } finally {
   await browser.close();
